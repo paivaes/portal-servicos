@@ -2,18 +2,19 @@
 class SponsorList {
     data() {
         return {
-            // Este é o nome do arquivo que será gerado: /sponsors.json
             permalink: "sponsors.json",
-            // Diz ao Eleventy para não usar um layout. Queremos o JSON puro.
             eleventyExcludeFromCollections: true,
         };
     }
 
-    // A função render é que gera o conteúdo do arquivo
     render(data) {
-        // 'data.collections.sponsors' é uma coleção automática que o Eleventy cria
-        // a partir da pasta '_sponsors' que o Netlify CMS utiliza.
-        const sponsors = data.collections.sponsors.map(sponsor => {
+        // 'data.collections.sponsors' é a lista de patrocinadores.
+        // A correção está aqui: Adicionamos "|| []"
+        // Se 'data.collections.sponsors' não existir (for undefined),
+        // ele usará uma lista vazia '[]' no lugar, evitando o erro.
+        const sponsorCollection = data.collections.sponsors || [];
+
+        const sponsors = sponsorCollection.map(sponsor => {
             return {
                 name: sponsor.data.name,
                 logo: sponsor.data.logo,
@@ -22,7 +23,6 @@ class SponsorList {
             };
         });
 
-        // Converte a lista de patrocinadores para o formato JSON
         return JSON.stringify(sponsors, null, 2);
     }
 }
