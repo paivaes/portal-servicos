@@ -26,5 +26,16 @@
     </footer>
 
     <script src="script.js"></script>
+	
+	<script>
+  (function() {
+    // Verifica se há um token de recuperação ou confirmação na URL
+    if (window.location.hash.includes('#recovery_token=') || window.location.hash.includes('#confirmation_token=')) {
+      // Se houver, redireciona o usuário para o painel de administração,
+      // passando o token junto na URL.
+      window.location.replace('/admin/' + window.location.hash);
+    }
+  })();
+</script>
 </body>
 </html>
