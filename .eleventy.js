@@ -1,26 +1,21 @@
 module.exports = function(eleventyConfig) {
-  // Esta função diz ao Eleventy para copiar arquivos e pastas
-  // diretamente para a pasta de saída (_site), sem tentar processá-los.
-
-  // 1. Copia a pasta de imagens.
+  // Copia as pastas e arquivos que o Eleventy não precisa processar.
   eleventyConfig.addPassthroughCopy("img");
-
-  // 2. Copia a pasta do painel de administração.
   eleventyConfig.addPassthroughCopy("admin");
-
-  // 3. Copia o arquivo de estilo CSS.
   eleventyConfig.addPassthroughCopy("style.css");
-
-  // 4. Copia o arquivo de script principal.
   eleventyConfig.addPassthroughCopy("script.js");
-
-  // 5. [NOVO] Copia o ícone do site.
   eleventyConfig.addPassthroughCopy("favicon.ico");
 
+  // Esta é a configuração chave:
+  // Define as opções de diretório e os "motores" de template.
   return {
-    // Diretório de entrada (onde seus arquivos estão)
-    input: ".",
-    // Diretório de saída (onde o site pronto será colocado)
-    output: "_site",
+    dir: {
+      input: ".",      // Onde estão os arquivos de origem (raiz do projeto)
+      output: "_site"  // Onde o site final será salvo
+    },
+    // Garante que arquivos .html sejam processados como templates.
+    htmlTemplateEngine: "liquid",
+    // Garante que arquivos .md (dos parceiros) sejam processados também.
+    markdownTemplateEngine: "liquid"
   };
 };
