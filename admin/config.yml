@@ -7,12 +7,12 @@ public_folder: "/img" # Como o site irá acessar as imagens
 
 collections:
   - name: "sponsors" # Nome da coleção de dados
-    label: "Patrocinadores" # Como vai aparecer no menu do admin
-    folder: "_sponsors" # Pasta onde os dados dos patrocinadores serão salvos
-    create: true # Permite criar novos patrocinadores
-    slug: "{{slug}}" # Usa o nome do patrocinador para o nome do arquivo
-    fields: # Define os campos para cada patrocinador
-      - { label: "Nome do Patrocinador", name: "name", widget: "string" }
+    label: "Parceiros" # Como vai aparecer no menu do admin
+    folder: "_sponsors" # Pasta onde os dados dos parceiros serão salvos
+    create: true # Permite criar novos parceiros
+    slug: "{{slug}}" # Usa o nome do parceiro para o nome do arquivo
+    fields: # Define os campos para cada parceiro
+      - { label: "Nome do Parceiro", name: "name", widget: "string" }
       - { label: "Logo", name: "logo", widget: "image" }
       - { label: "Telefone", name: "phone", widget: "string" }
       - { label: "Endereço", name: "address", widget: "string" }
