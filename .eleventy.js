@@ -14,8 +14,8 @@ module.exports = function(eleventyConfig) {
   // 4. Copia o arquivo de script principal.
   eleventyConfig.addPassthroughCopy("script.js");
 
-  // Eleventy irá processar o index.html principal por padrão
-  // e o sponsors.11ty.js para criar o sponsors.json.
+  // 5. [NOVO] Copia o ícone do site.
+  eleventyConfig.addPassthroughCopy("favicon.ico");
 
   return {
     // Diretório de entrada (onde seus arquivos estão)
