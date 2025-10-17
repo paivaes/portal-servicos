@@ -1,8 +1,8 @@
 ---
 order: 1
 category: Alimentação
-name: Doce Zoe
+name: Doce Zoe - Doceria Gourmet
 logo: /img/logo-empresa-g.jpg
 phone: (69)98159-9285
-address: Rua A
+address: .
 ---
