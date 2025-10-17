@@ -25,7 +25,6 @@ class SponsorList {
                 logo: sponsor.data.logo,
                 phone: sponsor.data.phone,
                 address: sponsor.data.address,
-                order: sponsor.data.order, // Mantém o campo de ordem
                 category: sponsor.data.category // Adiciona o campo de categoria
             };
         });
