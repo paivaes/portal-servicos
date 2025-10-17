@@ -1,4 +1,3 @@
-// Arquivo de template para gerar o sponsors.json
 class SponsorList {
     data() {
         return {
@@ -8,11 +7,17 @@ class SponsorList {
     }
 
     render(data) {
-        // 'data.collections.sponsors' é a lista de patrocinadores.
-        // A correção está aqui: Adicionamos "|| []"
-        // Se 'data.collections.sponsors' não existir (for undefined),
-        // ele usará uma lista vazia '[]' no lugar, evitando o erro.
+        // ================== NOSSO ESPIÃO ==================
+        // Esta linha vai imprimir no log do Netlify todas as "coleções" de dados que o Eleventy encontrou.
+        console.log("--- DEBUG: Coleções encontradas ---", Object.keys(data.collections));
+        // ================================================
+
         const sponsorCollection = data.collections.sponsors || [];
+
+        // ================== NOSSO ESPIÃO 2 ================
+        // Esta linha vai nos dizer quantos itens ele encontrou dentro da coleção "sponsors".
+        console.log(`--- DEBUG: Encontrados ${sponsorCollection.length} itens na coleção 'sponsors'.`);
+        // ================================================
 
         const sponsors = sponsorCollection.map(sponsor => {
             return {
