@@ -7,7 +7,7 @@ async function loadSponsors() {
         const sponsors = await response.json();
 
         // 1. Ordena todos os parceiros pela ordem definida
-        sponsors.sort((a, b) => (a.order || 100) - (b.order || 100));
+        sponsors.sort((a, b) => a.name.localeCompare(b.name));
 
         // 2. Agrupa os parceiros por categoria
         const groupedByCategory = sponsors.reduce((acc, sponsor) => {
