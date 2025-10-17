@@ -1,3 +1,4 @@
+```javascript
 module.exports = function(eleventyConfig) {
   // Copia as pastas e arquivos que o Eleventy não precisa processar.
   eleventyConfig.addPassthroughCopy("img");
@@ -6,7 +7,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("script.js");
   eleventyConfig.addPassthroughCopy("favicon.ico");
 
-  // Esta é a configuração chave:
+  // Esta é a configuração chave que estava faltando ou incompleta:
   // Define as opções de diretório e os "motores" de template.
   return {
     dir: {
@@ -15,7 +16,8 @@ module.exports = function(eleventyConfig) {
     },
     // Garante que arquivos .html sejam processados como templates.
     htmlTemplateEngine: "liquid",
-    // Garante que arquivos .md (dos parceiros) sejam processados também.
+    // A LINHA MAIS IMPORTANTE: Garante que arquivos .md (dos parceiros) sejam processados também.
     markdownTemplateEngine: "liquid"
   };
 };
+```
