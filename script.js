@@ -39,16 +39,22 @@ async function loadSponsors() {
             groupedByCategory[category].forEach(sponsor => {
                 const card = document.createElement('div');
                 card.className = 'sponsor-card';
+
+                // ===== ALTERAÇÃO FEITA AQUI =====
+                // "Limpamos" o número para o link (remove espaços, traços, etc.)
+                const cleanPhone = sponsor.phone ? sponsor.phone.replace(/[^0-9+]/g, '') : '';
+
                 card.innerHTML = `
                     <div class="sponsor-logo-container">
                         <img src="${sponsor.logo}" alt="Logo de ${sponsor.name}" class="sponsor-logo">
                     </div>
                     <div class="sponsor-info">
                         <h2>${sponsor.name}</h2>
-                        <p>📞 ${sponsor.phone || ''}</p>
+                        <p>📞 <a href="tel:${cleanPhone}">${sponsor.phone || ''}</a></p>
                         <p>📍 ${sponsor.address || ''}</p>
                     </div>
                 `;
+                // ===== FIM DA ALTERAÇÃO =====
                 grid.appendChild(card);
             });
 
