@@ -1,4 +1,3 @@
-// Função para buscar os dados dos patrocinadores e construir a página
 async function loadSponsors() {
     try {
         const response = await fetch('/sponsors.json');
