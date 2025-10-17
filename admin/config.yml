@@ -12,7 +12,18 @@ collections:
     create: true # Permite criar novos parceiros
     slug: "{{slug}}" # Usa o nome do parceiro para o nome do arquivo
     fields: # Define os campos para cada parceiro
-      - { label: "Nome do Parceiro", name: "name", widget: "string" }
-      - { label: "Logo", name: "logo", widget: "image" }
-      - { label: "Telefone", name: "phone", widget: "string" }
-      - { label: "Endereço", name: "address", widget: "string" }
+      collections:
+        name: "sponsors"
+        label: "Parceiros"
+        folder: "_sponsors"
+        create: true
+        slug: "{{slug}}"
+        fields: # Define os campos para cada parceiro
+          # ===== NOVO CAMPO ADICIONADO AQUI =====
+          - { label: "Ordem de Exibição", name: "order", widget: "number", min: 1, default: 100 }
+          # =======================================
+          - { label: "Nome do Parceiro", name: "name", widget: "string" }
+          - { label: "Logo", name: "logo", widget: "image" }
+          - { label: "Telefone", name: "phone", widget: "string" }
+          - { label: "Endereço", name: "address", widget: "string" }
+      
