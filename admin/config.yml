@@ -1,14 +1,14 @@
 # Configuração do backend para se conectar com o Netlify e o GitHub
+# Configuração do backend
 backend:
   name: git-gateway
-  branch: main # ou master, dependendo da sua branch principal
+  branch: main
 
-# Onde as imagens (logos) serão salvas no seu projeto
+# Configuração de mídia
 media_folder: "img"
-# Como o site irá acessar essas imagens
 public_folder: "/img"
 
-# Define as coleções de conteúdo gerenciáveis (neste caso, os Parceiros)
+# Definição das coleções
 collections:
   - name: "sponsors"
     label: "Parceiros"
@@ -17,6 +17,12 @@ collections:
     slug: "{{slug}}"
     fields: # Lista de campos para cada Parceiro
       - { label: "Ordem de Exibição", name: "order", widget: "number", min: 1, default: 100 }
+      # ===== NOVO CAMPO DE CATEGORIA ADICIONADO AQUI =====
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options: ["Assistência Técnica", "Alimentação","Moda & Beleza", "Pet Shop", "Serviços", "Serviços Gráficos", "Transporte", "Utilidades"] # <- Altere estas opções como desejar
+      # ====================================================
       - { label: "Nome do Parceiro", name: "name", widget: "string" }
       - { label: "Logo", name: "logo", widget: "image" }
       - { label: "Telefone", name: "phone", widget: "string" }
