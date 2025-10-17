@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nossos Patrocinadores</title>
+    <title>Nossos Parceiros - IEQ JK</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,31 +11,29 @@
 </head>
 <body>
 
-    <header>
-        <h1>Nossos Parceiros</h1>
-        <p>Agradecemos a todos que apoiam nosso projeto e acreditam em nossa missão.</p>
+    <header style="background-color: #2c3e50; padding: 20px; text-align: center; color: white;">
+        <img src="./img/logo-ieqjk.png" alt="Logo IEQ JK" style="max-width: 150px; margin-bottom: 10px;">
+        <h1>IEQ JK</h1>
+        <p>Agradecemos a todos os nossos Parceiros que apoiam nosso projeto e acreditam em nossa missão.</p>
     </header>
-
     <main>
         <div id="sponsors-grid" class="sponsors-container">
             </div>
     </main>
 
     <footer>
-        <p>© 2025 Painel de Serviços - IEQ</p>
+        <p>© 2025 Seu Nome ou Nome do Projeto</p>
     </footer>
 
     <script src="script.js"></script>
-	
-	<script>
-  (function() {
-    // Verifica se há um token de recuperação ou confirmação na URL
-    if (window.location.hash.includes('#recovery_token=') || window.location.hash.includes('#confirmation_token=')) {
-      // Se houver, redireciona o usuário para o painel de administração,
-      // passando o token junto na URL.
-      window.location.replace('/admin/' + window.location.hash);
-    }
-  })();
-</script>
+
+    <script>
+      (function() {
+        if (window.location.hash.includes('#recovery_token=') || window.location.hash.includes('#confirmation_token=')) {
+          window.location.replace('/admin/' + window.location.hash);
+        }
+      })();
+    </script>
+
 </body>
 </html>
