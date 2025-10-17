@@ -1,8 +1,5 @@
 # Configuração do backend para se conectar com o Netlify e o GitHub
 # Configuração do backend
-# Configuração do backend
-# Configuração do backend para se conectar com o Netlify e o GitHub
-# Configuração do backend
 backend:
   name: git-gateway
   branch: main
@@ -30,3 +27,4 @@ collections:
       - { label: "Logo", name: "logo", widget: "image" }
       - { label: "Telefone", name: "phone", widget: "string" }
       - { label: "Endereço", name: "address", widget: "string" }
+
