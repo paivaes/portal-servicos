@@ -1,9 +1,15 @@
 /* Estilos Gerais */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f4f7f6;
-    color: #333;
+    padding: 0;
+    /* Gradiente de quatro cores: vermelho, amarelo, azul, lilás */
+    background: linear-gradient(to right, 
+                #FF0000,   /* Vermelho */
+                #FFFF00,   /* Amarelo */
+                #0000FF,   /* Azul */
+                #EE82EE);  /* Lilás */
+    color: white;
 }
 
 /* Cabeçalho */
