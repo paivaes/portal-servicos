@@ -6,37 +6,60 @@ async function loadSponsors() {
             throw new Error('Não foi possível carregar os dados dos parceiros.');
         }
         const sponsors = await response.json();
-        
-        // ===== LINHA ADICIONADA PARA ORDENAR A LISTA =====
-        sponsors.sort((a, b) => a.order - b.order);
-        // ===============================================
-        
-        const grid = document.getElementById('sponsors-grid');
-        if (!grid) return;
 
-        grid.innerHTML = ''; 
+        // 1. Ordena todos os parceiros pela ordem definida
+        sponsors.sort((a, b) => (a.order || 100) - (b.order || 100));
 
-        sponsors.forEach(sponsor => {
-            const card = document.createElement('div');
-            card.className = 'sponsor-card';
+        // 2. Agrupa os parceiros por categoria
+        const groupedByCategory = sponsors.reduce((acc, sponsor) => {
+            const category = sponsor.category || "Sem Categoria";
+            if (!acc[category]) {
+                acc[category] = [];
+            }
+            acc[category].push(sponsor);
+            return acc;
+        }, {});
 
-            card.innerHTML = `
-                <div class="sponsor-logo-container">
-                    <img src="${sponsor.logo}" alt="Logo de ${sponsor.name}" class="sponsor-logo">
-                </div>
-                <div class="sponsor-info">
-                    <h2>${sponsor.name}</h2>
-                    <p>📞 ${sponsor.phone}</p>
-                    <p>📍 ${sponsor.address}</p>
-                </div>
-            `;
-            grid.appendChild(card);
-        });
+        const mainContainer = document.getElementById('categories-container');
+        if (!mainContainer) return;
+
+        mainContainer.innerHTML = ''; // Limpa o container
+
+        // 3. Cria as seções para cada categoria
+        for (const category in groupedByCategory) {
+            // Cria o título da categoria
+            const categoryTitle = document.createElement('h2');
+            categoryTitle.className = 'category-title';
+            categoryTitle.textContent = category;
+            mainContainer.appendChild(categoryTitle);
+
+            // Cria a grade para os parceiros desta categoria
+            const grid = document.createElement('div');
+            grid.className = 'sponsors-container';
+
+            groupedByCategory[category].forEach(sponsor => {
+                const card = document.createElement('div');
+                card.className = 'sponsor-card';
+                card.innerHTML = `
+                    <div class="sponsor-logo-container">
+                        <img src="${sponsor.logo}" alt="Logo de ${sponsor.name}" class="sponsor-logo">
+                    </div>
+                    <div class="sponsor-info">
+                        <h2>${sponsor.name}</h2>
+                        <p>📞 ${sponsor.phone || ''}</p>
+                        <p>📍 ${sponsor.address || ''}</p>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            mainContainer.appendChild(grid);
+        }
 
     } catch (error) {
         console.error(error);
-        const grid = document.getElementById('sponsors-grid');
-        grid.innerHTML = `<p>Ocorreu um erro ao carregar os parceiros. Tente novamente mais tarde.</p>`;
+        const mainContainer = document.getElementById('categories-container');
+        mainContainer.innerHTML = `<p>Ocorreu um erro ao carregar os parceiros.</p>`;
     }
 }
 
