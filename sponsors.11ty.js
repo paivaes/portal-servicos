@@ -14,7 +14,7 @@ class SponsorList {
 
         const sponsorCollection = data.collections.sponsors || [];
 
-        // ================== NOSSO ESPIÃO 2 ================
+		// ================== NOSSO ESPIÃO 2 ================
         // Esta linha vai nos dizer quantos itens ele encontrou dentro da coleção "sponsors".
         console.log(`--- DEBUG: Encontrados ${sponsorCollection.length} itens na coleção 'sponsors'.`);
         // ================================================
@@ -24,7 +24,9 @@ class SponsorList {
                 name: sponsor.data.name,
                 logo: sponsor.data.logo,
                 phone: sponsor.data.phone,
-                address: sponsor.data.address
+                address: sponsor.data.address,
+                order: sponsor.data.order, // Mantém o campo de ordem
+                category: sponsor.data.category // Adiciona o campo de categoria
             };
         });
 
