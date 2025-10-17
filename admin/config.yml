@@ -1,29 +1,23 @@
+# Configuração do backend para se conectar com o Netlify e o GitHub
 backend:
   name: git-gateway
-  branch: main # ou master, dependendo do nome da sua branch principal no GitHub
+  branch: main # ou master, dependendo da sua branch principal
 
-media_folder: "img" # Onde as imagens das logos serão salvas
-public_folder: "/img" # Como o site irá acessar as imagens
+# Onde as imagens (logos) serão salvas no seu projeto
+media_folder: "img"
+# Como o site irá acessar essas imagens
+public_folder: "/img"
 
+# Define as coleções de conteúdo gerenciáveis (neste caso, os Parceiros)
 collections:
-  - name: "sponsors" # Nome da coleção de dados
-    label: "Parceiros" # Como vai aparecer no menu do admin
-    folder: "_sponsors" # Pasta onde os dados dos parceiros serão salvos
-    create: true # Permite criar novos parceiros
-    slug: "{{slug}}" # Usa o nome do parceiro para o nome do arquivo
-    fields: # Define os campos para cada parceiro
-      collections:
-        name: "sponsors"
-        label: "Parceiros"
-        folder: "_sponsors"
-        create: true
-        slug: "{{slug}}"
-        fields: # Define os campos para cada parceiro
-          # ===== NOVO CAMPO ADICIONADO AQUI =====
-          - { label: "Ordem de Exibição", name: "order", widget: "number", min: 1, default: 100 }
-          # =======================================
-          - { label: "Nome do Parceiro", name: "name", widget: "string" }
-          - { label: "Logo", name: "logo", widget: "image" }
-          - { label: "Telefone", name: "phone", widget: "string" }
-          - { label: "Endereço", name: "address", widget: "string" }
-      
+  - name: "sponsors"
+    label: "Parceiros"
+    folder: "_sponsors"
+    create: true
+    slug: "{{slug}}"
+    fields: # Lista de campos para cada Parceiro
+      - { label: "Ordem de Exibição", name: "order", widget: "number", min: 1, default: 100 }
+      - { label: "Nome do Parceiro", name: "name", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image" }
+      - { label: "Telefone", name: "phone", widget: "string" }
+      - { label: "Endereço", name: "address", widget: "string" }
