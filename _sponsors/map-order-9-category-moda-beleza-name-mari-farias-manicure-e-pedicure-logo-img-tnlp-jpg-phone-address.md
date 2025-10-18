@@ -1,7 +1,7 @@
 ---
 order: 9
-category: Moda & Beleza
 name: MARI FARIAS - MANICURE E PEDICURE
+category: Moda&Beleza
 logo: /img/tnlp.jpg
 phone: .
 address: .
