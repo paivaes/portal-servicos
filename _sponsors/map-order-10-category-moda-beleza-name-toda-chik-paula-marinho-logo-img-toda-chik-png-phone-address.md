@@ -1,7 +1,7 @@
 ---
 order: 10
-category: Moda & Beleza
 name: TODA CHIK - PAULA MARINHO
+category: Moda&Beleza
 logo: /img/toda-chik.png
 phone: .
 address: .
