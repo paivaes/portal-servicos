@@ -4,10 +4,11 @@ body {
     margin: 0;
     padding: 0;
     
-    /* ===== FUNDO ANIMADO COM AS 4 CORES ESPECÍFICAS ===== */
-    background: linear-gradient(-45deg, #ff4d4d, #ffff66, #6666ff, #c566d3);
-    background-size: 400% 400%;
-    animation: animateGradient 15s ease infinite;
+    /* ===== FUNDO ANIMADO CORRIGIDO COM 4 CORES DISTINTAS ===== */
+    /* Paleta de cores ajustada com um amarelo mais escuro */
+    background: linear-gradient(-45deg, #E74C3C, #FFC300, #3498DB, #9B59B6);
+    background-size: 400% 400%; /* Tamanho grande para permitir a animação */
+    animation: animateGradient 15s ease infinite; /* Aplica a animação */
 }
 
 /* Keyframes que definem a animação do gradiente */
