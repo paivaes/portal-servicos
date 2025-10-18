@@ -1,4 +1,4 @@
-# Configuração do backend
+# Configuração do backend para se conectar com o Netlify e o GitHub
 backend:
   name: git-gateway
   branch: main
@@ -14,15 +14,21 @@ collections:
     folder: "_sponsors"
     create: true
     slug: "{{slug}}"
-    sort: "name:asc" # <-- LINHA ADICIONADA: Ordena pelo nome em ordem ascendente
-    fields: # Lista de campos para cada Parceiro
-      # O campo "order" foi removido daqui
+    sort: "name:asc"
+    fields:
+      - label: "Nome do Parceiro"
+        name: "name"
+        widget: "string"
       - label: "Categoria"
         name: "category"
         widget: "select"
         options: ["Alimentação", "Assistêcia Técnica", "Moda&Beleza", "Pet Shop", "Serviços", "Serviços Gráficos", "Transporte", "Utilidades"]
-      - { label: "Nome do Parceiro", name: "name", widget: "string" }
-      - { label: "Logo", name: "logo", widget: "image" }
-      - { label: "Telefone", name: "phone", widget: "string" }
-      - { label: "Endereço", name: "address", widget: "string" }
-
+      - label: "Logo"
+        name: "logo"
+        widget: "image"
+      - label: "Telefone"
+        name: "phone"
+        widget: "string"
+      - label: "Endereço"
+        name: "address"
+        widget: "string"
