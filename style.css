@@ -4,10 +4,10 @@ body {
     margin: 0;
     padding: 0;
     
-    /* ===== FUNDO ANIMADO ADICIONADO AQUI ===== */
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); /* Cores iniciais do gradiente */
-    background-size: 400% 400%; /* Tamanho grande para permitir a animação */
-    animation: animateGradient 15s ease infinite; /* Aplica a animação */
+    /* ===== FUNDO ANIMADO COM AS 4 CORES ESPECÍFICAS ===== */
+    background: linear-gradient(-45deg, #ff4d4d, #ffff66, #6666ff, #c566d3);
+    background-size: 400% 400%;
+    animation: animateGradient 15s ease infinite;
 }
 
 /* Keyframes que definem a animação do gradiente */
@@ -26,10 +26,9 @@ body {
 
 /* Cabeçalho */
 header {
-    /* Mantém o fundo do cabeçalho fixo para melhor leitura */
     background-color: #2c3e50;
     color: #ffffff;
-    padding: 20px; /* Ajuste no padding */
+    padding: 20px;
     text-align: center;
 }
 
@@ -156,8 +155,8 @@ header p {
     font-size: 2em;
     margin-top: 40px;
     margin-bottom: 20px;
-    color: #ffffff; /* Cor do título da categoria alterada para branco */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Sombra para melhorar a leitura */
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 /* Rodapé */
