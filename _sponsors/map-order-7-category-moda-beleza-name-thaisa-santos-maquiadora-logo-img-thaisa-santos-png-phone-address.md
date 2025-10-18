@@ -1,7 +1,7 @@
 ---
 order: 7
-category: Moda & Beleza
 name: THAISA SANTOS MAQUIADORA
+category: Moda&Beleza
 logo: /img/thaisa-santos.png
 phone: .
 address: .
