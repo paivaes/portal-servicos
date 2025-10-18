@@ -20,8 +20,9 @@ collections:
       - label: "Categoria"
         name: "category"
         widget: "select"
-        options: ["Ouro", "Prata", "Bronze"]
+        options: ["Alimentação", "Assistêcia Técnica", "Moda&Beleza", "Pet Shop", "Serviços", "Serviços Gráficos", "Transporte", "Utilidades"]
       - { label: "Nome do Parceiro", name: "name", widget: "string" }
       - { label: "Logo", name: "logo", widget: "image" }
       - { label: "Telefone", name: "phone", widget: "string" }
       - { label: "Endereço", name: "address", widget: "string" }
+
