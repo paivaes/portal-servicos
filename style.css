@@ -3,79 +3,114 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    /* Gradiente de quatro cores: vermelho, amarelo, azul, lilás */
+    [cite_start]/* Gradiente de quatro cores: vermelho, amarelo, azul, lilás */ [cite: 2]
     background: linear-gradient(to right, 
                 #FF0000,   /* Vermelho */
                 #FFFF00,   /* Amarelo */
                 #0000FF,   /* Azul */
-                #EE82EE);  /* Lilás */
-    color: white;
+                #EE82EE);  [cite_start]/* Lilás */ [cite: 2, 3]
+    [cite_start]color: white; [cite: 3]
 }
 
 /* Cabeçalho */
 header {
     background-color: #2c3e50;
     color: #ffffff;
-    padding: 40px 20px;
+    [cite_start]padding: 40px 20px; [cite: 4]
     text-align: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    [cite_start]font-size: 2.5em; [cite: 5]
 }
 
 header p {
     font-size: 1.1em;
-    opacity: 0.9;
+    [cite_start]opacity: 0.9; [cite: 6]
 }
 
-/* Container Principal dos Patrocinadores */
+/* ===== ESTILOS PARA O MENU DE CATEGORIAS (ADICIONADO) ===== */
+
+.category-menu {
+    text-align: center;
+    padding: 20px 10px;
+    background-color: #ffffff; /* Fundo branco para o menu */
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas menores */
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espaço entre os botões */
+}
+
+.category-filter {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid #2c3e50; /* Borda com a cor do cabeçalho */
+    border-radius: 25px;
+    background-color: transparent;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.category-filter:hover {
+    background-color: #34495e;
+    color: white;
+}
+
+/* Estilo para o botão de filtro que está ativo */
+.category-filter.active-filter {
+    background-color: #2c3e50;
+    color: white;
+}
+
+
+/* Container Principal dos Parceiros */
 .sponsors-container {
     display: grid;
-    /* Cria colunas responsivas: tenta caber o máximo de 350px, senão quebra a linha */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 40px 20px;
+    [cite_start]grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); [cite: 7]
+    [cite_start]gap: 30px; [cite: 8]
+    [cite_start]padding: 40px 20px; [cite: 8]
     max-width: 1200px;
-    margin: 0 auto;
+    [cite_start]margin: 0 auto; [cite: 9]
 }
 
-/* Card Individual do Patrocinador */
+/* Card Individual do Parceiro */
 .sponsor-card {
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    [cite_start]box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); [cite: 10]
     padding: 25px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    [cite_start]transition: transform 0.3s ease, box-shadow 0.3s ease; [cite: 11]
 }
 
 .sponsor-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    [cite_start]box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); [cite: 12]
 }
 
-/* Logo do Patrocinador */
+/* Logo do Parceiro */
 .sponsor-logo-container {
-    height: 120px; /* Altura fixa para alinhar as logos */
+    [cite_start]height: 120px; [cite: 13]
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    [cite_start]margin-bottom: 20px; [cite: 14]
 }
 
 .sponsor-logo {
     max-width: 100%;
     max-height: 100px; /* Garante que a logo não fique muito grande */
-    object-fit: contain;
+    [cite_start]object-fit: contain; [cite: 15]
 }
 
-/* Informações do Patrocinador */
+/* Informações do Parceiro */
 .sponsor-info h2 {
     font-size: 1.5em;
     margin: 10px 0;
-    color: #2c3e50;
+    [cite_start]color: #2c3e50; [cite: 16]
 }
 
 .sponsor-info p {
@@ -83,27 +118,27 @@ header p {
     line-height: 1.6;
     margin: 5px 0;
     color: #555;
-    display: flex; /* Para alinhar o ícone com o texto */
+    [cite_start]display: flex; [cite: 17]
     align-items: center;
     justify-content: center;
-    gap: 8px; /* Espaço entre o ícone e o texto */
+    [cite_start]gap: 8px; [cite: 17, 18]
+}
+
+/* Título da Categoria */
+.category-title {
+    text-align: center;
+    width: 100%;
+    font-size: 2em;
+    margin-top: 40px;
+    [cite_start]margin-bottom: 20px; [cite: 20]
+    color: #333; /* Cor do título da categoria */
 }
 
 /* Rodapé */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #e9ecef;
+    [cite_start]background-color: #e9ecef; [cite: 19]
     color: #6c757d;
     margin-top: 40px;
-
-}
-
-.category-title {
-    text-align: center;
-    width: 100%;
-    font-size: 2em;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    color: #333; /* Cor do título da categoria */
 }
