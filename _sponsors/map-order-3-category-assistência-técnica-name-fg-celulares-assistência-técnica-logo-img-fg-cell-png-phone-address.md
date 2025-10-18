@@ -1,7 +1,7 @@
 ---
 order: 3
-category: Assistência Técnica
 name: FG CELULARES - ASSISTÊNCIA TÉCNICA
+category: Assistêcia Técnica
 logo: /img/fg-cell.png
 phone: .
 address: .
